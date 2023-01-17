@@ -15,9 +15,9 @@ class smartsmsClass
 
         $baseurl = 'http://smartsmsgh.com/api/send';
 
-        $params = '?tokenUsername=hcahssyr';
+        $params = '?tokenUsername='.getenv('SMARTSMS_USERNAME');
 
-        $params .= '&tokenPassword=1ccspasp';
+        $params .= '&tokenPassword='.getenv('SMARTSMS_PASSWORD');
 
         $params .= '&to=' . urlencode($to);
 
