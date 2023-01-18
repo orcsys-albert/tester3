@@ -3,6 +3,7 @@ namespace Smart;
 
 class smartsmsClass
 {
+    public $gclient;
     public function __construct()
     {
         $this->gclient = new \GuzzleHttp\Client();

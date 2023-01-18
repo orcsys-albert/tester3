@@ -1,9 +1,11 @@
 <?php
 declare(strict_types=1);
+
 use Smart\smartsmsClass;
 
 use PHPUnit\Framework\TestCase;
 
+#[AllowDynamicProperties]
 class smartTest extends PHPUnit\Framework\TestCase
 {
 	private $response;
@@ -11,8 +13,13 @@ class smartTest extends PHPUnit\Framework\TestCase
 	{
 		$this->smartclass = new smartsmsClass();
 		$to = "233242925729";
-		$content = "Testing at ".microtime();
+		$content = "Testing at ".date('Y-m-d H:i:s');
 		$this->response = $this->smartclass->sendSms($to,$content);
+	}
+
+	public function test_credentials_are_in_env(){
+		$this->assertIsString(getenv('SMARTSMS_USERNAME'));
+		$this->assertIsString(getenv('SMARTSMS_PASSWORD'));
 	}
 
     public function test_can_send_sms()

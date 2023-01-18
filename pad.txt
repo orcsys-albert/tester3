@@ -1,0 +1,5 @@
+function microtodate($micro_date){
+$date_array = explode(" ",$micro_date);
+$date = date("Y-m-d H:i:s",$date_array[1]);
+echo "Date: $date:" . $date_array[0].PHP_EOL;
+}
