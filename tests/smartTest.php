@@ -31,4 +31,9 @@ class smartTest extends PHPUnit\Framework\TestCase
     {
        $this->assertEquals("success", $this->response['status']);
     }
+
+	public function test_customer_name(){
+		$name = $this->smartclass->getPatientData(2);
+		$this->assertEquals("albert", $name);
+	}
 }

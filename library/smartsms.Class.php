@@ -126,4 +126,12 @@ class smartsmsClass
         );
     }
 
+    public function getPatientData($customername){
+        return "albert";
+    }
+
+    public function takeVitals($data){
+
+    }
+
 }
